@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Valentine 💖</title>
+
+<style>
+/* ================= BASE ================= */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #ffc0cb;
+    font-family: "Lucida Handwriting", "Lucida Console", cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* ================= BOUQUET INTRO ================= */
+#bouquet {
+    position: fixed;
+    inset: 0;
+    background-color: #ffc0cb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(80px, 22vw, 150px);
+    z-index: 10;
+    animation: bouquetFade 4s forwards;
+}
+
+@keyframes bouquetFade {
+    0% { opacity: 1; }
+    70% { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; }
+}
+
+/* ================= MAIN BOX ================= */
+.container {
+    text-align: center;
+    background: rgba(255,255,255,0.9);
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 360px;
+    box-shadow: 0 0 20px rgba(255,0,0,0.3);
+    z-index: 3;
+}
+
+h1 {
+    color: #c4002f;
+    font-size: clamp(24px, 5vw, 34px);
+    min-height: 40px;
+}
+
+p {
+    color: #800020;
+    font-size: clamp(16px, 4vw, 20px);
+}
+
+/* ================= PHOTOS ================= */
+.photo {
+    position: absolute;
+    width: clamp(90px, 22vw, 150px);
+    height: clamp(90px, 22vw, 150px);
+    border-radius: 18px;
+    border: 4px solid #ff4d6d;
+    object-fit: cover;
+    opacity: 0;
+    z-index: 2;
+
+    /* Fade-in + glow pulse */
+    animation:
+        fadeIn 2s forwards,
+        glowPulse 3s ease-in-out infinite;
+
+    box-shadow:
+        0 0 14px rgba(255, 255, 255, 0.8),
+        0 0 30px rgba(255, 255, 255, 0.5);
+}
+
+
+.top-left {
+    top: 15px;
+    left: 15px;
+    animation-delay: 1s, 0s;
+}
+
+.top-right {
+    top: 15px;
+    right: 15px;
+    animation-delay: 1.3s, 0.5s;
+}
+
+.bottom-left {
+    bottom: 15px;
+    left: 15px;
+    animation-delay: 1.6s, 1s;
+}
+
+.bottom-right {
+    bottom: 15px;
+    right: 15px;
+    animation-delay: 1.9s, 1.5s;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* ================= BUTTONS ================= */
+.choices {
+    margin-top: 25px;
+    position: relative;
+    height: 100px;
+}
+
+.yes, .no {
+    font-size: 18px;
+    padding: 10px 25px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.yes {
+    background: #ff4d6d;
+    color: white;
+}
+
+.no {
+    background: #999;
+    color: white;
+    position: absolute;
+}
+
+/* ================= HEARTS ================= */
+.heart {
+    position: absolute;
+    font-size: 30px;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 0;
+    animation: heartFade 3s ease-in-out;
+}
+
+@keyframes heartFade {
+    0% { opacity: 0; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.1); }
+    100% { opacity: 0; }
+}
+
+/* ================= CONFETTI ================= */
+.confetti {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    z-index: 5;
+    animation: confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+@keyframes glowPulse {
+    0% {
+        box-shadow:
+            0 0 10px rgba(255, 255, 255, 0.6),
+            0 0 22px rgba(255, 255, 255, 0.35);
+    }
+    50% {
+        box-shadow:
+            0 0 20px rgba(255, 255, 255, 0.95),
+            0 0 45px rgba(255, 255, 255, 0.7);
+    }
+    100% {
+        box-shadow:
+            0 0 10px rgba(255, 255, 255, 0.6),
+            0 0 22px rgba(255, 255, 255, 0.35);
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Bouquet Intro -->
+<div id="bouquet">💐🌹💖🌷</div>
+
+<!-- Photos -->
+<img src="c:\Users\Njambi\Downloads\WhatsApp Image 2026-01-27 at 20.28.44 (2).jpeg" class="photo top-left">
+<img src="c:\Users\Njambi\Downloads\WhatsApp Image 2026-01-27 at 20.28.44.jpeg" class="photo top-right">
+<img src="c:\Users\Njambi\Downloads\WhatsApp Image 2026-01-27 at 20.28.44 (1).jpeg" class="photo bottom-left">
+<img src="c:\Users\Njambi\Downloads\WhatsApp Image 2026-01-27 at 20.28.44 (3).jpeg" class="photo bottom-right">
+
+<!-- Main Content -->
+<div class="container">
+    <h1 id="typewriter"></h1>
+
+    <p>
+        Valentine’s Day would mean the world<br>
+        if I get to spend it with you.
+    </p>
+
+    <p><strong>Will you be my Valentine? ❤️</strong></p>
+
+    <div class="choices">
+        <button class="yes" onclick="yesClicked()">Yes 💖</button>
+        <button class="no" id="noBtn">No 💔</button>
+    </div>
+</div>
+
+<script>
+/* ================= TYPEWRITER ================= */
+const text = "Hey My Love 💕"; // CHANGE NAME HERE
+let i = 0;
+const target = document.getElementById("typewriter");
+
+function typeWriter() {
+    if (i < text.length) {
+        target.innerHTML += text.charAt(i++);
+        setTimeout(typeWriter, 120);
+    }
+}
+setTimeout(typeWriter, 1500);
+
+/* ================= NO BUTTON DODGE ================= */
+const noBtn = document.getElementById("noBtn");
+function moveNo() {
+    noBtn.style.left = Math.random() * 200 + "px";
+    noBtn.style.top = Math.random() * 70 + "px";
+}
+noBtn.addEventListener("mouseover", moveNo);
+noBtn.addEventListener("click", moveNo);
+
+/* ================= HEARTS ================= */
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.top = Math.random() * window.innerHeight + "px";
+    heart.style.fontSize = (20 + Math.random() * 20) + "px";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 3000);
+}, 500);
+
+/* ================= CONFETTI BLAST ================= */
+function yesClicked() {
+    for (let i = 0; i < 260; i++) {
+        const confetti = document.createElement("div");
+        confetti.className = "confetti";
+        confetti.style.left = Math.random() * window.innerWidth + "px";
+        confetti.style.top = Math.random() * -50 + "px";
+        confetti.style.backgroundColor =
+            ["#ff4d6d","#ffcc00","#ff66cc","#ff0000","#ffffff"]
+            [Math.floor(Math.random() * 5)];
+        confetti.style.animationDuration = (2 + Math.random() * 3) + "s";
+        document.body.appendChild(confetti);
+        setTimeout(() => confetti.remove(), 5000);
+    }
+
+    setTimeout(() => {
+        alert("Yaaay 💖💖 I can’t wait to spend Valentine’s with you 😘");
+    }, 800);
+}
+</script>
+
+</body>
+</html>
